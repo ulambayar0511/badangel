@@ -7,13 +7,13 @@ on:
       - "LICENSE"
       - "README.md"
     branches:
-      - master
+      - main
   workflow_dispatch:
     inputs:
       hugoVersion:
         description: "Hugo Version"
         required: false
-        default: "0.97.1"
+        default: "v0.120.1"
 
 concurrency:
   group: "pages"
@@ -34,7 +34,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: "0.97.1"
+      HUGO_VERSION: "v0.120.1"
     steps:
       - name: Check version
         if: ${{ github.event.inputs.hugoVersion }}
